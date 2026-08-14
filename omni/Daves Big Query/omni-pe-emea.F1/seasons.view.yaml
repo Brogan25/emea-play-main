@@ -1,0 +1,12 @@
+# Reference this view as omni_pe_emea_f1__seasons
+catalog: omni-pe-emea
+schema: F1
+table_name: seasons
+
+dimensions:
+  year: {}
+  url: {}
+
+measures:
+  count:
+    aggregate_type: count

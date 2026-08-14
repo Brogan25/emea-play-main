@@ -1,0 +1,23 @@
+# Reference this view as omni_pe_emea_f1__pit_stops
+catalog: omni-pe-emea
+schema: F1
+table_name: pit_stops
+
+dimensions:
+  stop: {}
+  lap: {}
+  time: {}
+  duration: {}
+  milliseconds: {}
+
+  race_id:
+    sql: raceId
+    format: ID
+
+  driver_id:
+    sql: driverId
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count

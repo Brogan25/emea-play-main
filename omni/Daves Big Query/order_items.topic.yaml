@@ -1,0 +1,14 @@
+base_view: bigquery_public_data_thelook_ecommerce__order_items
+label: Ecommerce Sales
+
+joins:
+  bigquery_public_data_thelook_ecommerce__orders: {}
+  bigquery_public_data_thelook_ecommerce__products: {}
+  bigquery_public_data_thelook_ecommerce__users: {}
+  bigquery_public_data_thelook_ecommerce__inventory_items: {}
+
+ai_context: Ecommerce sales topic at the order-item (line-item) grain. Each row
+  is one line item in an order. Revenue = sale_price summed across order items.
+  Orders, products, users (customers), and inventory items join in at
+  many-to-one from order_items. Returns are identified by returned_at being
+  populated (not null).

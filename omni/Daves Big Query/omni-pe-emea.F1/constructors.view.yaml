@@ -1,0 +1,20 @@
+# Reference this view as omni_pe_emea_f1__constructors
+catalog: omni-pe-emea
+schema: F1
+table_name: constructors
+
+dimensions:
+  name: {}
+  nationality: {}
+  url: {}
+
+  constructor_id:
+    sql: constructorId
+    format: ID
+
+  constructor_ref:
+    sql: constructorRef
+
+measures:
+  count:
+    aggregate_type: count

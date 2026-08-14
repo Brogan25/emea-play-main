@@ -1,0 +1,42 @@
+# Reference this view as bigquery_public_data_thelook_ecommerce__users
+description: Programatically generated users for The Look fictitious e-commerce store
+
+catalog: bigquery-public-data
+schema: thelook_ecommerce
+table_name: users
+
+dimensions:
+  first_name: {}
+  last_name: {}
+  email: {}
+  age: {}
+  gender: {}
+  state: {}
+  street_address: {}
+  postal_code: {}
+  city: {}
+  country: {}
+  latitude: {}
+  longitude: {}
+  traffic_source: {}
+  created_at: {}
+  user_geom: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+measures:
+  count:
+    aggregate_type: count
+
+  user_count:
+    sql: ${id}
+    aggregate_type: count_distinct
+
+  average_age:
+    sql: ${age}
+    aggregate_type: average
+
+ai_context: Users represent customers. Geographic fields (country, state, city)
+  describe location, and traffic_source indicates the acquisition channel.

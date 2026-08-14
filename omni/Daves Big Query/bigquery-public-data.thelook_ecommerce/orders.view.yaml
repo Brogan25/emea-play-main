@@ -1,0 +1,35 @@
+# Reference this view as bigquery_public_data_thelook_ecommerce__orders
+description: Programatically generated orders for The Look fictitious e-commerce store
+
+catalog: bigquery-public-data
+schema: thelook_ecommerce
+table_name: orders
+
+dimensions:
+  status: {}
+  gender: {}
+  created_at: {}
+  returned_at: {}
+  shipped_at: {}
+  delivered_at: {}
+  num_of_item: {}
+
+  order_id:
+    format: ID
+    primary_key: true
+
+  user_id:
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count
+
+  order_count:
+    sql: ${order_id}
+    label: Orders
+    aggregate_type: count_distinct
+
+  total_items_sold:
+    sql: ${num_of_item}
+    aggregate_type: sum

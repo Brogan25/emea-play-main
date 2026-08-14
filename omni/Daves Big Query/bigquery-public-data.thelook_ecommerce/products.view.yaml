@@ -1,0 +1,37 @@
+# Reference this view as bigquery_public_data_thelook_ecommerce__products
+description: The Look fictitious e-commerce dataset - products table
+
+catalog: bigquery-public-data
+schema: thelook_ecommerce
+table_name: products
+
+dimensions:
+  cost: {}
+  category: {}
+  name: {}
+  brand: {}
+  retail_price: {}
+  department: {}
+  sku: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+  distribution_center_id:
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count
+
+  product_count:
+    sql: ${id}
+    aggregate_type: count_distinct
+
+  total_cost:
+    sql: ${cost}
+    aggregate_type: sum
+
+ai_context: Brand, category, and department are product attributes useful for
+  grouping sales.

@@ -1,0 +1,21 @@
+base_view: omni_pe_emea_f1__results
+label: F1
+description: Formula 1 race results at the driver-result grain. Each row is one
+  driver's finishing result in one race. Races, circuits, drivers, constructors,
+  and finishing status join in.
+
+joins:
+  omni_pe_emea_f1__races:
+    omni_pe_emea_f1__circuits: {}
+  omni_pe_emea_f1__drivers: {}
+  omni_pe_emea_f1__constructors: {}
+  omni_pe_emea_f1__status: {}
+
+ai_context: This topic is built on Formula 1 race results. The base view
+  (results) is at the grain of one row per driver per race. Points and finishing
+  positions live in results. Join in races (name, round, date, year) and
+  circuits (name, location, country) for the event, drivers (forename, surname,
+  nationality, code) for who drove, constructors (team name, nationality) for
+  the team, and status for the finishing status (e.g. Finished, Accident,
+  Engine). Use results.count for number of results/entries, and sum points for
+  championship-style scoring.
