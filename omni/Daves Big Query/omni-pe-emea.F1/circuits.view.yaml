@@ -15,6 +15,7 @@ dimensions:
   circuit_id:
     sql: circuitId
     format: ID
+    primary_key: true
 
   circuit_ref:
     sql: circuitRef
