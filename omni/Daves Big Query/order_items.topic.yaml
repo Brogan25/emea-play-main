@@ -11,4 +11,4 @@ ai_context: Ecommerce sales topic at the order-item (line-item) grain. Each row
   is one line item in an order. Revenue = sale_price summed across order items.
   Orders, products, users (customers), and inventory items join in at
   many-to-one from order_items. Returns are identified by returned_at being
-  populated (not null).
+  populated (not null).v
