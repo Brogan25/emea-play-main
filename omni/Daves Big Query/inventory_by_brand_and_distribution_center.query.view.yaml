@@ -1,0 +1,20 @@
+# Reference this view as inventory_by_brand_and_distribution_center
+label: Inventory by Brand and Distribution Center
+description: Inventory item counts by product brand and distribution center,
+  built from the Ecommerce Sales topic.
+
+query:
+  fields:
+    bigquery_public_data_thelook_ecommerce__inventory_items.product_brand: brand
+    bigquery_public_data_thelook_ecommerce__distribution_centers.name: distribution_center
+    bigquery_public_data_thelook_ecommerce__inventory_items.count: inventory_count
+  base_view: bigquery_public_data_thelook_ecommerce__order_items
+  sorts:
+    - field: bigquery_public_data_thelook_ecommerce__inventory_items.count
+      desc: true
+  topic: order_items
+
+dimensions:
+  brand: {}
+  distribution_center: {}
+  inventory_count: {}
